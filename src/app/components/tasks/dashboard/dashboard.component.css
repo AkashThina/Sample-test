@@ -1,0 +1,42 @@
+/* Custom Styling for More Intensity */
+
+/* Sidebar Background Enhancement */
+.bg-light {
+    background-color: #f0f0f0 !important; /* Lighter gray to give it more subtle contrast */
+  }
+  
+  /* Hover Effect with more Intensity */
+  a.hover-bg-primary:hover {
+    background-color: #007bff; /* More intense blue background */
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Shadow Intensity for Links */
+  a.shadow-lg {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Increased shadow intensity */
+  }
+  
+  /* Card Shadow Intensity */
+  .card.shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow around the card */
+  }
+  
+  /* More Intense Background on Sidebar Links */
+  a.bg-white {
+    background-color: #ffffff; /* Standard white background for links */
+    border: 1px solid #ddd; /* Adding subtle borders for intensity */
+  }
+  
+  /* Padding Enhancements */
+  a.d-block.p-3 {
+    padding: 12px 16px; /* Increased padding for better spacing */
+  }
+  
+  /* Sidebar Title Enhancement */
+  h4.text-primary {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; /* More intense blue color for title */
+  }
+  

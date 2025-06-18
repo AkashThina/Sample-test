@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Parent Component and Child Component -->
+      <div class="col-md-6">
+        <h3>Parent Component: {{ parentData }}</h3>
+  
+      
+        <div class="mb-3">
+          <label for="parentData" class="form-label">Enter Data for Child:</label>
+          <input type="text" class="form-control" id="parentData" [(ngModel)]="parentData" />
+        </div>
+  
+        <app-child [childData]="parentData" (sendDataToParent)="receiveDataFromChild($event)"></app-child>
+        <br>
+        <p>Message from Child: {{ messageFromChild }}</p>
+      </div>
+      <!-- Vertical Line Separator and Service Data Section -->
+      <div class="col-md-6" style="border-left: 2px solid #b5b5b5;">
+        <!-- <p>Change data From parent</p> -->
+        <p>Service Data: {{ servicesChangeData.ChangeData1 }}</p>
+        <div class="mb-3">
+            <label for="parentData" class="form-label">Enter Data for services:</label>
+            <input type="text" class="form-control" id="parentData" [(ngModel)]="changefromparent" />
+          </div>
+        <button class="btn btn-primary" (click)="ChangeFromParent()">Change Data In services</button>
+      </div>
+    </div>
+  </div>
+  

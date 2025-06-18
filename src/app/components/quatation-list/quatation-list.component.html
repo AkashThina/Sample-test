@@ -1,0 +1,48 @@
+<div class="container mt-4" *ngIf="quotationData">
+    <!-- Header Row -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="text-lg fw-bold m-0">Quotation Details - #{{ quotationData.quotationID }}</h2>
+      <button class="btn btn-primary" routerLink="/table">Go Back</button>
+    </div>
+  
+    <!-- Quotation Card -->
+    <mat-card>
+      <mat-card-content>
+        <div class="quotation-grid d-flex flex-column flex-md-row gap-5">
+          <!-- Left Column -->
+          <div class="column ms-md-5 flex-fill">
+            <div class="field"><strong>Quote No.</strong>: {{ quotationData.quotationID }}</div>
+            <div class="field"><strong>Product</strong>: Motor Insurance</div>
+            <div class="field"><strong>Full Name</strong>: {{ quotationData.fullName || '-' }}</div>
+            <div class="field"><strong>Insurance Company Name</strong>: {{ quotationData.insuranceCompanyName || '–' }}</div>
+            <div class="field"><strong>Phone Number</strong>: {{ quotationData.phoneNumber || '-' }}</div>
+            <div class="field"><strong>Insurance Company EmailID</strong>: {{ quotationData.insuranceCompanyEmailID || '–' }}</div>
+            <div class="field"><strong>EmailID</strong>: {{ quotationData.email || '-' }}</div>
+            <div class="field"><strong>Addon Premium (KSh)</strong>: {{ quotationData.addonPremium || '–' }}</div>
+            <div class="field"><strong>Cover Type</strong>: {{ quotationData.coverType || '–' }}</div>
+          </div>
+  
+          <!-- Right Column -->
+          <div class="column flex-fill">
+            <div class="field"><strong>Tax Premium (KSh)</strong>: {{ quotationData.taxPremium || '–' }}</div>
+            <div class="field"><strong>Vehicle Type</strong>: {{ quotationData.vehicleType || '–' }}</div>
+            <div class="field"><strong>Basic Premium (KSh)</strong>: {{ quotationData.basicPremium || '–' }}</div>
+            <div class="field"><strong>Payment Type</strong>: {{ quotationData.paymentType || '–' }}</div>
+            <div class="field"><strong>Total Premium (KSh)</strong>: {{ quotationData.totalPremium || '–' }}</div>
+            <div class="field"><strong>Premium Setting</strong>: {{ quotationData.premiumSetting || '–' }}</div>
+            <div class="field"><strong>Total Cover Amount (KSh)</strong>: {{ quotationData.totalCoverAmount || '–' }}</div>
+            <div class="field"><strong>Created On</strong>: {{ quotationData.createdOn | date }}</div>
+            <div class="field"><strong>Expiry Date</strong>: {{ quotationData.expiryDate | date }}</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  
+  <!-- Loading State -->
+  <div class="container mt-4" *ngIf="!quotationData">
+    <mat-spinner diameter="40"></mat-spinner>
+    <p>Loading quotation details...</p>
+  </div>
+  

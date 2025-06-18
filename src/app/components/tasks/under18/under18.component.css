@@ -1,0 +1,63 @@
+.navbarr {
+    background-color: #811F63;
+}
+ 
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 4px 8px;
+ 
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    i {
+        color: #811f63;
+        margin-right: 5px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+ 
+    input.search-input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        flex: 1;
+        color: #333;
+        background-color: transparent;
+ 
+        &::placeholder {
+            color: #666;
+        }
+    }
+}
+ 
+/* Show below 1024px only */
+.custom-toggler {
+    background-color: transparent;
+    border: none;
+    display: block;
+}
+ 
+@media (min-width: 1024px) {
+    .custom-toggler {
+        display: none;
+    }
+}
+ 
+/* Optional: white toggler icon */
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+ 
+@media (max-width: 767px) {
+  .search-bar.hide-input input.search-input {
+    display: none;
+  }
+  
+}

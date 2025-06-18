@@ -1,0 +1,113 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-paginator {
+    justify-content: center;
+  }
+
+  .paginator-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+::ng-deep .mat-paginator {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+::ng-deep .mat-paginator-range-label {
+  font-weight: 500;
+}
+
+::ng-deep .mat-paginator-icon {
+  color: #1976d2;
+}
+.custom-paginator-box {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-paginator-box button.active {
+  background-color: #1976d2;
+  color: rgb(224, 82, 82);
+  border-radius: 4px;
+}
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.custom-table th, .custom-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.custom-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.custom-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.custom-table a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.custom-table a:hover {
+  text-decoration: underline;
+}
+/* td{
+  width: 90px;
+} */
+
+ .pagination-container {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pagination-container button {
+  border: none;
+  padding: 6px 12px;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  border-right: 1px solid #ccc;
+}
+
+.pagination-container button:last-child {
+  border-right: none;
+}
+
+.pagination-container button.active {
+  background-color: #d4c216;
+  color: #000;
+  font-weight: bold;
+  border: #000 1.8px solid;
+}
+
+.pagination-container button:disabled {
+  color: #999;
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,13 @@
+<div>
+    <h4>Receives Child Component: {{ childData }}</h4>
+  
+    <!-- Input field to type data to send to parent -->
+    <div class="mb-3" style="border-top: 2px solid rgb(173, 173, 173);" >
+      <label for="childInput" class="form-label mt-3">Enter Data for Parent:</label>
+      <input type="text" class="form-control" [(ngModel)]="childInputData" id="childInput" />
+    </div>
+  
+    <!-- Button to emit typed data to parent -->
+    <button class="btn btn-primary" (click)="sendData()">Send Data to Parent</button>
+  </div>
+  

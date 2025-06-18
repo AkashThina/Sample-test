@@ -1,0 +1,135 @@
+<div class="container py-5">
+    <div class="card shadow-lg border-0 mx-auto" style="max-width: 600px;">
+      <div class="card-body">
+        <h4 class="card-title text-center mb-4"> Dynamic Form</h4>
+  
+        <form *ngIf="myForm"  [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+          <div *ngFor="let field of formConfig" class="mb-4">
+  
+            <!-- Text, Email, Number, Password -->
+            <div *ngIf="['text', 'email', 'number', 'password'].includes(field.type)">
+              <div class="form-floating">
+                <input
+                  [type]="field.type"
+                  [formControlName]="field.name"
+                  class="form-control"
+                  [id]="field.name"
+                  [placeholder]="field.placeholder"
+                />
+                <label [for]="field.name">{{ field.placeholder }}</label>
+              </div>
+              <div *ngIf="myForm.get(field.name)?.touched && myForm.get(field.name)?.invalid" class="text-danger small mt-1">
+                <div *ngIf="myForm.get(field.name)?.errors?.['required']">This field is required.</div>
+                <div *ngIf="myForm.get(field.name)?.errors?.['email']">Enter a valid email.</div>
+                <div *ngIf="myForm.get(field.name)?.errors?.['minlength']">Min 6 characters required.</div>
+                <div *ngIf="myForm.get(field.name)?.errors?.['min']">Minimum age is 18.</div>
+              </div>
+            </div>
+            
+  
+            <!-- Textarea -->
+            <div *ngIf="field.type === 'textarea'">
+              <div class="form-floating">
+                <textarea
+                  [formControlName]="field.name"
+                  [placeholder]="field.placeholder"
+                  class="form-control"
+                  rows="4"
+                  [id]="field.name"
+                ></textarea>
+                <label [for]="field.name" class="form-label">{{ field.placeholder }}</label>
+                <div *ngIf="myForm.get(field.name)?.touched && myForm.get(field.name)?.invalid" class="text-danger small mt-1">
+                  <div *ngIf="myForm.get(field.name)?.errors?.['required']">This field is required.</div>
+                </div>
+              </div>
+            </div>
+            
+  
+            <!-- Select -->
+            <div *ngIf="field.type === 'select'">
+              <!-- <label [for]="field.name" class="form-label">{{ field.placeholder }}</label> -->
+              <select [formControlName]="field.name" class="form-select" [id]="field.name">
+                <option value="" disabled hidden>Select {{ field.placeholder }}</option>
+                <option *ngFor="let opt of field.options" [value]="opt">{{ opt }}</option>
+              </select>
+              <div *ngIf="myForm.get(field.name)?.touched && myForm.get(field.name)?.invalid" class="text-danger small mt-1">
+                <div *ngIf="myForm.get(field.name)?.errors?.['required']">This field is required.</div>
+              </div>
+            </div>
+  
+            <!-- Radio Buttons -->
+            <div *ngIf="field.type === 'radio'">
+              <label class="form-label d-block">{{ field.label }}</label>
+              <div *ngFor="let opt of field.options" class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  [value]="opt"
+                  [formControlName]="field.name"
+                  [id]="field.name + '-' + opt"
+                />
+                <label class="form-check-label" [for]="field.name + '-' + opt">{{ opt }}</label>
+              </div>
+              <div *ngIf="myForm.get(field.name)?.touched && myForm.get(field.name)?.invalid" class="text-danger small mt-1">
+                <div *ngIf="myForm.get(field.name)?.errors?.['required']">Please select an option.</div>
+              </div>
+            </div>
+            <!-- CheckBox -->
+            <div *ngIf="field.type === 'checkbox-group'" [formGroup]="myForm">
+              <label class="form-label d-block">{{ field.label }}</label>
+              <div formArrayName="{{field.name}}">
+                <div *ngFor="let option of field.options; let i = index" class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    [formControlName]="i"
+                    [id]="field.name + '-' + option"
+                  />
+                  <label class="form-check-label" [for]="field.name + '-' + option">{{ option }}</label>
+                </div>
+              </div>
+              <div *ngIf="myForm.get(field.name)?.touched && myForm.get(field.name)?.invalid" class="text-danger small mt-1">
+                <div *ngIf="myForm.get(field.name)?.errors?.['required']">Please select at least one option.</div>
+              </div>
+            </div>
+
+            
+            <!-- Checkbox -->
+          
+            <div *ngIf="field.type === 'checkbox'" class="form-check mt-3">
+              <label class="form-label d-block">Terms and Conditions</label>
+              <input
+                type="checkbox"
+                [formControlName]="field.name"
+                class="form-check-input"
+                [id]="field.name"
+              />
+              <label class="form-check-label" [for]="field.name">{{ field.label }}</label>
+              <div *ngIf="myForm.get(field.name)?.touched && myForm.get(field.name)?.invalid" class="text-danger small mt-1">
+                <div *ngIf="myForm.get(field.name)?.errors?.['requiredTrue']">You must accept the terms.</div>
+              </div>
+            </div>
+  
+            <!-- File Input -->
+            <div *ngIf="field.type === 'file'">
+              <label [for]="field.name" class="form-label">{{ field.placeholder }}</label>
+              <input
+                type="file"
+                (change)="onFileChange($event, field.name)"
+                class="form-control"
+                [id]="field.name"
+              />
+            </div>
+  
+          </div>
+  
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary  shadow-sm">
+             Submit Form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

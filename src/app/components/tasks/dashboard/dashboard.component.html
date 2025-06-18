@@ -1,0 +1,61 @@
+<div class="container-fluid p-0">
+  <div class="row vh-100 m-0">
+    <!-- Sidebar Column -->
+    <div class="col-md-3 bg-light p-4 d-flex flex-column">
+      <h4 class="text-center mb-4 text-primary">Sidebar</h4>
+      <ul class="list-unstyled">
+        <li>
+          <a routerLink="/parent" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+            <i class="bi bi-person-circle"></i> Parent
+          </a>
+        </li>
+        <li>
+          <a routerLink="/date" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+            <i class="bi bi-calendar me-1"></i>Past Date
+          </a>
+        </li>
+        <li>
+            <a routerLink="/datefuture" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+              <i class="bi bi-calendar me-1"></i>Future Date
+            </a>
+        </li>
+        <li>
+            <a routerLink="/below18" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+              <i class="bi bi-calendar me-1"></i>under 18
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dialog" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+              <i class="bi bi-calendar me-1"></i>Dialog Box
+             </a>
+        </li>
+        <li>
+          <a routerLink="/TabView" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+            <i class="bi  bi-list me-1"></i>Tab View
+          </a>
+        </li>
+        <li>
+          <a routerLink="/Form" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+            <i class="fas  fa-user me-2"></i>Form
+          </a>
+        </li>
+        <li>
+          <a routerLink="/table" class="d-block p-3 text-decoration-none rounded shadow-sm mb-3 bg-white hover-bg-primary">
+            <i class="fas  fa-user me-2"></i>Table
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+      <!-- Content Column -->
+      <div class="col-md-9 p-4">
+        <!-- Bootstrap Card -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

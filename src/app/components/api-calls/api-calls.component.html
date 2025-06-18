@@ -1,0 +1,50 @@
+<div class="container">
+    <h2 class="ms-5 mt-3">Select a Make</h2>
+    
+    <!-- Dropdown for Makes -->
+    <select [(ngModel)]="selectedMakeId" class="form-select ms-5 w-50" (change)="onMakeChange()">
+      <option value="" disabled selected>Select Make</option>
+      <option *ngFor="let make of makes" [value]="make.makeName">
+         {{ make.makeName }}
+      </option>
+      <option value="Others">Others</option>
+    </select>
+    <br>
+  
+    <!-- Custom Make input field if 'Others' is selected -->
+    <div *ngIf="selectedMakeId === 'Others'">
+        <h2 class="ms-5 mt-3">Enter Your Make</h2>
+      <label for="customMake"><h2 class="ms-5"></h2></label>
+      <input id="customMake" [(ngModel)]="customMake" class="form-control ms-5 w-50">
+    </div>
+  
+   
+    <!-- Model Dropdown if not 'Others' selected -->
+    <div *ngIf="selectedMakeId !== 'Others'">
+        <h2 class="ms-5 mt-3">Select a Model</h2>
+      <select [(ngModel)]="selectedModelId" class="form-select ms-5 w-50">
+        <option value="" selected disabled>Select Model</option>
+        <option *ngFor="let model of models" [value]="model.modelId">
+          {{ model.modelName }}
+        </option>
+      </select>
+    </div>
+    <!-- Custom Model input field if 'Others' is selected -->
+    <div *ngIf="selectedMakeId === 'Others'">
+        <h2 class="ms-5 mt-3">Enter Your Model</h2>
+      <label for="customModel"><h2 class="ms-5"></h2></label>
+      <input id="customModel" [(ngModel)]="customModel" class="form-control ms-5 w-50">
+    </div>
+  </div>
+<div class="container mt-5">
+  <ul *ngFor="let num of numbers; let i = index">
+  <li
+      *ngIf="i >= currentPage * pageSize && i < (currentPage + 1) * pageSize">
+    {{ num }}
+  </li>
+</ul>
+
+<button (click)="prevPage()" class="btn btn-primary mb-5" [disabled]="currentPage === 0">Previous</button>
+<button (click)="nextPage()" class="btn btn-dark mb-5 ms-4" [disabled]="(currentPage + 1) * pageSize >= numbers.length">Next</button>
+
+</div>

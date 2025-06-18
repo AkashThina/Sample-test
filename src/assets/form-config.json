@@ -1,0 +1,65 @@
+[
+  {
+    "type": "text",
+    "name": "fullName",
+    "placeholder": "Full Name",
+    "validators": ["required"]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "Email",
+    "validators": ["required", "email"]
+  },
+  {
+    "type": "number",
+    "name": "age",
+    "placeholder": "Age",
+    "validators": ["required", "min:18"]
+  },
+  {
+    "type": "password",
+    "name": "password",
+    "placeholder": "Password",
+    "validators": ["required", "minlength:6"]
+  },
+  {
+    "type": "radio",
+    "name": "gender",
+    "label": "Gender",
+    "options": ["Male", "Female", "Other"],
+    "validators": ["required"]
+  },
+  {
+    "type": "textarea",
+    "name": "bio",
+    "placeholder": "Short Bio",
+    "validators": ["required"]
+  },
+  {
+    "type": "select",
+    "name": "country",
+    "placeholder": "Select Country",
+    "options": ["India", "USA", "UK"],
+    "validators": ["required"]
+  },
+  {
+    "type": "checkbox-group",
+    "name": "hobbies",
+    "label": "Select Hobbies",
+    "options": ["Reading", "Traveling", "Gaming", "Cooking"],
+    "validators": ["requiredTrue"]
+  },
+  {
+    "type": "checkbox",
+    "name": "acceptTerms",
+    "label": "I accept the terms and conditions",
+    "validators": ["requiredTrue"]
+  },
+  {
+    "type": "file",
+    "name": "profilePic",
+    "placeholder": "Upload Profile Picture",
+    "validators": ["required"]
+  }
+]

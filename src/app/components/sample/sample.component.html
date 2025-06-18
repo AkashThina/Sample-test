@@ -1,0 +1,12 @@
+<div *ngIf="loaderService.isLoading" class="text-center" style="z-index: 1050;">
+  <img src="../../../assets/AKI-loader1.gif" alt="No Image">
+</div>
+
+<div *ngIf="!loaderService.isLoading" class="container mt-5">
+    <div class="text-center">
+      <button class="btn btn-lg btn-outline-primary shadow-sm px-5 py-2 rounded-pill" (click)="fetchData()">
+        <i class="bi bi-people-fill me-2"></i> Fetch Users
+      </button>
+    </div>
+  </div>
+  
