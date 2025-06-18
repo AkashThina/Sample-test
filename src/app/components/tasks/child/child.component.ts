@@ -12,8 +12,8 @@ export class ChildComponent implements OnInit {
   @Input() childData: string ='' 
   @Output() sendDataToParent = new EventEmitter<string>(); 
 
-  childInput: string = '';
+  childInputData: string = '';
   sendData() {
-    this.sendDataToParent.emit(this.childInput);
+    this.sendDataToParent.emit(this.childInputData);
   }
 }
