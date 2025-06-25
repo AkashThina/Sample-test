@@ -8,6 +8,7 @@ import { ChartComponent } from './components/chart/chart.component';
 import { ApiCallsComponent } from './components/api-calls/api-calls.component';
 import { DynamicformComponent } from './components/dynamicform/dynamicform.component';
 import { QuatationListComponent } from './components/quatation-list/quatation-list.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'Apicalls',component:ApiCallsComponent},
   {path:'dynamicform',component:DynamicformComponent},
   {path:'QuotationList/:id',component:QuatationListComponent},
+  {path:'pagination',component:PaginationComponent},
   { path: 'tasks', loadChildren: () => import('./modules/tasks/tasks.module').then(m => m.TasksModule) } 
 ];
 

@@ -48,7 +48,7 @@
     "name": "hobbies",
     "label": "Select Hobbies",
     "options": ["Reading", "Traveling", "Gaming", "Cooking"],
-    "validators": ["requiredTrue"]
+    "validators": ["required"]
   },
   {
     "type": "checkbox",

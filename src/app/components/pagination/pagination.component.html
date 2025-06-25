@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let i of paginatedItems">{{ i }}</li>
+</ul>
+
+<div class="pagination-controls mt-3">
+  <button (click)="prevPage()" class="btn btn-warning me-2" [disabled]="currentPage === 1">Previous</button>
+
+  <button (click)="nextPage()" class="btn btn-warning">Next</button>
+</div>

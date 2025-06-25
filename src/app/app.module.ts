@@ -29,6 +29,7 @@ import { DynamicformComponent } from './components/dynamicform/dynamicform.compo
 import { QuatationListComponent } from './components/quatation-list/quatation-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ApiCallsComponent,
     DynamicformComponent,
     QuatationListComponent,
+    PaginationComponent,
     // TableComponent,
     // FormComponent,
     
